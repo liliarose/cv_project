@@ -1,106 +1,119 @@
-# this file assumes that a single video/file
-# does not check the 'project' or 'file' 
 import cv2
 import os 
 import json 
 
-def default_img_fldr(video_path):
-    return video_path.split('/')[-1].split('.')[0]
+def sec2frame(seconds, fps):
+    return round(seconds*fps)
 
-# may not be used 
-def gen_all_frames_from_video(video_path, output_folder=None):
-    if not output_folder:
-        output_folder = default_img_fldr(video_path)
+def get_vid_meta(filename):
+    video = cv2.VideoCapture(filename)
+    frame_count = video.get(cv2.CAP_PROP_FRAME_COUNT)
+    fps = video.get(cv2.CAP_PROP_FPS)
+    duration = frame_count / fps
 
-    os.system(f'ffmpeg -i {video_path} {output_folder}/%d.jpeg')
+    return fps, duration, frame_count
 
 
-def frame_num(output_folder=None, ext='.jpeg'):
-    if not output_folder:
-        output_folder = default_img_fldr(video_path)
-    os.listdir('imgs')
+def process_single(annot_fn, fps, fout, img_folder):
+    with open(annot_fn) as f:
+        contents = json.load(f)
 
-def nullable_string(val):
-    if not val:
-        return None
-    return val
+    annot = contents['metadata']
+    attr = contents['attribute']
 
-def single_frame_by_time(video_path, seconds, output_name):
-    # ffmpeg -i input_file.mp4 -ss 01:23:45.. -vframes 1 output.jpg
-    os.system(f'ffmpeg -i {video_path} {output_name}')
+    # not doing anything with the temporal
+    # section.......
+    obj_seg = []
+    for d in annot.values():
+        if len(d['z']) == 1:
+            obj_seg.append(d)
+    # just using object present & object id for this....
+    name2i_attr = {d['aname']: i for i, d in attr.items()}
+    object_present = name2i_attr['object_present']
+    object_id = name2i_attr['object_id']
+    object_label = name2i_attr['object_label']
+
+    # coco starting out
+    coco_dict = { 'annotations': [ ]}
+
+    # just gonna use object present & object id
+    cat2id = {}
+    id_count = 0
+    dropped_items = []
+    for i, obj in enumerate(obj_seg):
+        av = obj['av']
+        # ==2 checks for rectangle
+        if (object_label not in av  and object_present not in av ) or obj['xy'][0] != 2:
+            if len(dropped_items) == 0:
+                dropped_items.append(name2i_attr)
+            dropped_items.append(obj)
+            continue
+        if av.get(object_label, None):
+            cat = av[object_label].strip()
+        else:
+            cat = av[object_present].strip()
+
+        c_id = av.get(object_id, '0').strip()
+        # adding to categories.....if needed
+        if (cat, c_id) not in cat2id:
+                cat2id[(cat, c_id)] = id_count
+                id_count +=1
+
+        coco_dict['annotations'].append({
+                'id': i,
+                # we need keypoint or segmentation for some reason....
+                'keypoints': None,
+                'category_id': cat2id[(cat, c_id)],
+                "image_id": sec2frame(obj['z'][0], fps),
+                'bbox': obj['xy'][1:],
+                'area': obj['xy'][-1]*obj['xy'][-2]
+
+        })
+
+    imgs = sorted(os.listdir(img_folder))
+    paths = [f'{img_folder}/{f}' for f in imgs]
+    assert(int(paths[-1].split('.jpg')[0].split('-')[-1]) == len(paths))
+    coco_dict['images'] = [{'id':i, 'file_name':fn} for i, fn in enumerate(paths)]
+    coco_dict['categories'] = [{'id': i, 'name': f'{cat}_{im}', 'supercategory':cat}
+                               for (cat, im), i in cat2id.items()]
+    with open(fout, 'w') as f:
+        json.dump(coco_dict, f)
+
+    return dropped_items
+
+
+
 
 def main(args):
-    
-    # get the json file w/ annot
-    json_f = args.json_annot
-    if json_f =='':
-        video_s = args.video.split('.')[:-1]
-        args.json_annot = '.'.join(video_s) + '.json'
 
-    # read the annot 
-    with open(json_f) as f:
-        annot = json.load(f)
-
-    # figure out metadata
-    '''
-    "1": {                          # attribute-id (unique)
-      "aname":"Activity",           # attribute name (shown to the user)
-      "anchor_id":"FILE1_Z2_XY0",   # FILE1_Z2_XY0 denotes that this attribute define a temporal segment of a video file. See https://gitlab.com/vgg/via/-/blob/master/via-3.x.y/src/js/_via_attribute.js
-      "type":4,                     # attributes's user input type ('TEXT':1, 'CHECKBOX':2, 'RADIO':3, 'SELECT':4, 'IMAGE':5 )
-      "desc":"Activity",            # (NOT USED YET)
-      "options":{"1":"Break Egg", "2":"Pour Liquid", "3":"Cut Garlic", "4":"Mix"}, # defines KEY:VALUE pairs and VALUE is shown as options of dropdown menu or radio button list
-      "default_option_id":""
-    },
-    '''
-    # could include 'object_present', 'object_id', 'object_label'
-    attr = annot['attributes'] 
-    '''
-    "ui": {
-      "file_content_align": "center",
-      "file_metadata_editor_visible": true,
-      "spatial_metadata_editor_visible": true,
-      "spatial_region_label_attribute_id": ""
-    }
-    '''
-    ui = annot['config']['ui']
-    data = annot['metadata']
-
-    # separate dataset into temporal seg vs object seg
-    # currently not doing anything with segments but can later 
-    segs, obj_segs = [], []
-
-    for k, d in data.values():
-        if len(d['z']) > 1:
-            segs.append(d)
-        else:
-            obj_segs.append(d)
-    
-    # transform 
-    coco_format = { 'info': {}, 'licenses': [], 
-            'images': [], 'annotations': [], 'categories': []} 
-    '''  
-    image{
-    "id": int, "width": int, "height": int, 
-    "file_name": str, "license": int, 
-    "flickr_url": str, "coco_url": str, "date_captured": datetime,
-    } 
-    '''
-
-
-
-
+    prefixes = [f for f in os.listdir(frames) if os.path.isdir(f'{args.frames}/{f}')]
+    dropped_things = {}
+    annot_folder = 'coco_files'
+    new_prefixes = []
+    for p in prefixes:
+        new_p = f'{args.folder}/{p}'
+        if os.path.isfile(new_p + '.json') and os.path.isfile(new_p + '.mp4'):
+            print('Processing', new_p)
+            fps, _, _ = get_vid_meta(new_p + '.mp4')
+            fout = f'{annot_folder}/{p}_coco.json'
+            dropped_items = process_single(new_p+'.json', fps, fout, f'{frames}/{p}')
+            if len(dropped_items) > 0:
+                dropped_things[p] = dropped_items
+            else:
+                new_prefixes.append(p)
 
 if __name__ == "__main__":
-
     parser = argparse.ArgumentParser()
-    parser.add_argument('video', type=str, help='video path')
-    parser.add_argument('--json_annot', '-ja', help='path to the json file annotations', default=None, type=str)
-    parser.add_argument('--output_folder', '-of', help='folder where frames are stored', default=None, type=str)
+    parser.add_argument('folder', help='folder with the annotations and videos; annotations & videos should have the same names', type=str, help='folder')
+    parser.add_argument('frames', help='folder with folders of video frames')
+    parser.add_argument('--output_folder', '-o', help='folder to output the coco annotations', default='.')
+    parser.add_argument('--verbose', '-v', help='print debugging messages & also '
     args = parser.parse_args()
+    main(args)
 
-    json_f = args.json_annot
-    if json_f =='':
-        video_s = args.video.split('.')[:-1]
-        args.json_annot = '.'.join(args.video.split('.')[:-1]) + '.json'
 
-    gen_all_frames_from_video(args.video_path, args.output_folder) 
+
+
+
+
+
