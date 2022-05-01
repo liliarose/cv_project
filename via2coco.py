@@ -1,6 +1,7 @@
 import cv2
 import os 
 import json 
+import argparse
 
 def sec2frame(seconds, fps):
     return round(seconds*fps)
@@ -82,8 +83,6 @@ def process_single(annot_fn, fps, fout, img_folder):
     return dropped_items
 
 
-
-
 def main(args):
 
     prefixes = [f for f in os.listdir(frames) if os.path.isdir(f'{args.frames}/{f}')]
@@ -104,15 +103,11 @@ def main(args):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('folder', help='folder with the annotations and videos; annotations & videos should have the same names', type=str, help='folder')
+    parser.add_argument('folder', help='folder with the annotations and videos; annotations & videos should have the same names')
     parser.add_argument('frames', help='folder with folders of video frames')
     parser.add_argument('--output_folder', '-o', help='folder to output the coco annotations', default='.')
-    parser.add_argument('--verbose', '-v', help='print debugging messages & also '
     args = parser.parse_args()
     main(args)
-
-
-
 
 
 
