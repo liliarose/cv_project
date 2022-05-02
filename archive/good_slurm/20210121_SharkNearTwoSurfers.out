@@ -1,0 +1,795 @@
+Unloaded dependency: anaconda3/2020.11
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda deactivate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+Unloading the anaconda2 module (if loaded)...
+Loaded dependency: anaconda3/2020.11
+AI/Version: anaconda3.2020.11
+-----------------------------
+
+Description
+-----------
+The modulefile AI/anaconda3.2020.11 provides a unified, rich, anaconda3 based
+environment for Artificial Intelligence(AI)/Machine Learning(ML)/Big Data(BD)
+on top of based on Python 3.
+
+Module contents
+---------------
+Several popular AI/ML/BD packages are included in this environment, such as:
+    tensorflow-gpu, theano, keras-gpu, pytorch, opencv, pandas, scikit-learn,
+scikit-image etc.
+
+To check the full list of available packages in this environment, first
+activate it and then run the command
+    conda list
+
+Main packages included in this module:
+* astropy 4.2
+* blas 1.0
+* bokeh 2.2.3
+* cudatoolkit 10.0.130
+* cudnn 7.6.5
+* h5py 2.8.0
+* hdf5 1.10.2
+* ipython 7.19.0
+* jupyter 1.0.0
+* jupyterlab 2.2.6
+* keras-gpu 2.3.1
+* matplotlib 3.3.2
+* mkl 2019.4
+* nccl 1.3.5
+* networkx 2.5
+* ninja 1.10.2
+* nltk 3.5
+* notebook 6.1.6
+* numba 0.51.2
+* numpy 1.17.0
+* opencv 3.4.2
+* pandas 1.2.0
+* pillow 8.1.0
+* pip 20.3.3
+* python 3.8.5
+* pytorch 1.5.0
+* scikit-learn 0.23.2
+* scipy 1.5.2
+* seaborn 0.11.1
+* tensorboard 1.15.0
+* tensorflow-gpu 1.15.0
+* theano 1.0.4
+
+If you need to further customize this environment (e.g., install additional
+packages, or upgrade a particular package),
+you should first clone this environment as follows:
+    conda create --prefix <path to a dir in which you can write> --clone
+$AI_ENV
+Then activate the newly spawned environment and proceed with your
+customization.
+
+To get further help with conda usage, you can try one of the following:
+    conda -h
+    conda <command> -h
+
+Activate the module
+-------------------
+Before activating, make sure you are on a GPU node of Bridges2 if you wish to
+use the components built to run on GPUs.
+To activate the environment, run the following commands:
+    # module load AI/anaconda3.2020.11
+    source activate $AI_ENV
+        # OR
+    conda activate $AI_ENV # This might require you to run "conda init" first.
+
+Dealing with mdnet_input/20210121_SharkNearTwoSurfers/20210121_SharkNearTwoSurfers_1_0.json
+Frame 1/223, Score 5.013, Time 0.766
+Frame 2/223, Score 4.503, Time 0.769
+Frame 3/223, Score 5.217, Time 0.759
+Frame 4/223, Score 5.216, Time 0.759
+Frame 5/223, Score 5.071, Time 0.759
+Frame 6/223, Score 4.667, Time 0.754
+Frame 7/223, Score 4.592, Time 0.768
+Frame 8/223, Score 4.854, Time 0.961
+Frame 9/223, Score 4.428, Time 0.753
+Frame 10/223, Score 4.999, Time 1.567
+Frame 11/223, Score 9.682, Time 0.753
+Frame 12/223, Score 9.287, Time 0.760
+Frame 13/223, Score 9.517, Time 0.780
+Frame 14/223, Score 9.840, Time 0.781
+Frame 15/223, Score 9.551, Time 0.762
+Frame 16/223, Score 9.620, Time 0.758
+Frame 17/223, Score 8.937, Time 0.782
+Frame 18/223, Score 9.978, Time 0.752
+Frame 19/223, Score 9.256, Time 0.807
+Frame 20/223, Score 10.091, Time 1.833
+Frame 21/223, Score 12.390, Time 0.785
+Frame 22/223, Score 12.520, Time 0.726
+Frame 23/223, Score 12.031, Time 0.768
+Frame 24/223, Score 12.247, Time 0.739
+Frame 25/223, Score 12.093, Time 0.740
+Frame 26/223, Score 11.903, Time 0.750
+Frame 27/223, Score 12.241, Time 0.739
+Frame 28/223, Score 12.036, Time 0.742
+Frame 29/223, Score 12.002, Time 0.745
+Frame 30/223, Score 11.552, Time 1.576
+Frame 31/223, Score 12.686, Time 1.050
+Frame 32/223, Score 13.145, Time 0.754
+Frame 33/223, Score 14.068, Time 0.739
+Frame 34/223, Score 13.250, Time 0.743
+Frame 35/223, Score 13.585, Time 0.747
+Frame 36/223, Score 12.706, Time 0.749
+Frame 37/223, Score 13.013, Time 0.749
+Frame 38/223, Score 12.663, Time 0.748
+Frame 39/223, Score 12.514, Time 0.754
+Frame 40/223, Score 13.639, Time 1.576
+Frame 41/223, Score 14.294, Time 0.732
+Frame 42/223, Score 14.599, Time 0.743
+Frame 43/223, Score 13.896, Time 0.744
+Frame 44/223, Score 14.506, Time 0.734
+Frame 45/223, Score 15.154, Time 0.746
+Frame 46/223, Score 14.842, Time 0.750
+Frame 47/223, Score 14.722, Time 0.748
+Frame 48/223, Score 13.842, Time 0.761
+Frame 49/223, Score 14.233, Time 0.755
+Frame 50/223, Score 14.610, Time 1.563
+Frame 51/223, Score 15.066, Time 0.745
+Frame 52/223, Score 14.762, Time 0.731
+Frame 53/223, Score 15.584, Time 0.815
+Frame 54/223, Score 15.016, Time 0.725
+Frame 55/223, Score 14.862, Time 0.731
+Frame 56/223, Score 15.435, Time 0.726
+Frame 57/223, Score 14.648, Time 0.724
+Frame 58/223, Score 15.398, Time 0.730
+Frame 59/223, Score 14.928, Time 0.727
+Frame 60/223, Score 14.705, Time 1.594
+Frame 61/223, Score 14.042, Time 0.744
+Frame 62/223, Score 15.606, Time 0.781
+Frame 63/223, Score 14.839, Time 0.741
+Frame 64/223, Score 14.555, Time 0.766
+Frame 65/223, Score 15.076, Time 0.989
+Frame 66/223, Score 14.945, Time 0.749
+Frame 67/223, Score 15.908, Time 0.746
+Frame 68/223, Score 14.688, Time 0.751
+Frame 69/223, Score 17.214, Time 0.743
+Frame 70/223, Score 16.638, Time 1.606
+Frame 71/223, Score 16.486, Time 0.727
+Frame 72/223, Score 16.755, Time 0.718
+Frame 73/223, Score 16.268, Time 0.738
+Frame 74/223, Score 17.454, Time 0.766
+Frame 75/223, Score 16.678, Time 0.760
+Frame 76/223, Score 16.443, Time 0.730
+Frame 77/223, Score 16.380, Time 0.996
+Frame 78/223, Score 16.594, Time 0.731
+Frame 79/223, Score 16.281, Time 0.749
+Frame 80/223, Score 16.551, Time 1.564
+Frame 81/223, Score 16.475, Time 0.743
+Frame 82/223, Score 16.965, Time 0.748
+Frame 83/223, Score 14.770, Time 0.788
+Frame 84/223, Score 17.005, Time 0.767
+Frame 85/223, Score 16.250, Time 0.761
+Frame 86/223, Score 17.267, Time 0.752
+Frame 87/223, Score 17.401, Time 0.746
+Frame 88/223, Score 16.168, Time 0.734
+Frame 89/223, Score 15.942, Time 0.909
+Frame 90/223, Score 17.192, Time 1.575
+Frame 91/223, Score 16.903, Time 0.729
+Frame 92/223, Score 16.645, Time 0.737
+Frame 93/223, Score 16.927, Time 0.750
+Frame 94/223, Score 16.923, Time 0.732
+Frame 95/223, Score 16.159, Time 0.749
+Frame 96/223, Score 17.170, Time 0.745
+Frame 97/223, Score 16.846, Time 0.732
+Frame 98/223, Score 17.653, Time 0.733
+Frame 99/223, Score 17.915, Time 0.732
+Frame 100/223, Score 16.542, Time 1.551
+Frame 101/223, Score 16.873, Time 0.738
+Frame 102/223, Score 17.879, Time 0.734
+Frame 103/223, Score 16.508, Time 0.726
+Frame 104/223, Score 15.420, Time 0.729
+Frame 105/223, Score 17.795, Time 0.732
+Frame 106/223, Score 16.893, Time 0.739
+Frame 107/223, Score 17.566, Time 0.728
+Frame 108/223, Score 16.862, Time 0.732
+Frame 109/223, Score 15.333, Time 0.742
+Frame 110/223, Score 16.915, Time 1.555
+Frame 111/223, Score 16.843, Time 0.756
+Frame 112/223, Score 17.406, Time 0.757
+Frame 113/223, Score 17.046, Time 0.734
+Frame 114/223, Score 17.195, Time 0.733
+Frame 115/223, Score 16.602, Time 0.733
+Frame 116/223, Score 15.679, Time 0.753
+Frame 117/223, Score 17.663, Time 0.729
+Frame 118/223, Score 17.275, Time 0.735
+Frame 119/223, Score 18.036, Time 0.749
+Frame 120/223, Score 17.696, Time 1.557
+Frame 121/223, Score 15.663, Time 0.778
+Frame 122/223, Score 16.657, Time 0.736
+Frame 123/223, Score 16.540, Time 0.724
+Frame 124/223, Score 14.882, Time 0.717
+Frame 125/223, Score 11.176, Time 0.743
+Frame 126/223, Score -11.888, Time 1.163
+Frame 127/223, Score -30.148, Time 1.172
+Frame 128/223, Score -35.508, Time 1.174
+Frame 129/223, Score -32.890, Time 1.190
+Frame 130/223, Score -36.337, Time 1.172
+Frame 131/223, Score -37.108, Time 1.189
+Frame 132/223, Score -35.122, Time 1.177
+Frame 133/223, Score -31.017, Time 1.179
+Frame 134/223, Score -33.308, Time 1.191
+Frame 135/223, Score -33.007, Time 1.229
+Frame 136/223, Score -37.785, Time 1.172
+Frame 137/223, Score -31.128, Time 1.191
+Frame 138/223, Score -34.787, Time 1.166
+Frame 139/223, Score -34.484, Time 1.390
+Frame 140/223, Score -35.973, Time 1.202
+Frame 141/223, Score -38.299, Time 1.216
+Frame 142/223, Score -37.259, Time 1.498
+Frame 143/223, Score -35.714, Time 1.500
+Frame 144/223, Score -35.618, Time 1.504
+Frame 145/223, Score -36.375, Time 1.515
+Frame 146/223, Score -31.044, Time 1.479
+Frame 147/223, Score -28.654, Time 1.537
+Frame 148/223, Score -27.845, Time 1.490
+Frame 149/223, Score -24.579, Time 1.502
+Frame 150/223, Score -26.108, Time 1.503
+Frame 151/223, Score -27.828, Time 1.543
+Frame 152/223, Score -24.675, Time 1.463
+Frame 153/223, Score -33.520, Time 1.496
+Frame 154/223, Score -34.867, Time 1.241
+Frame 155/223, Score -33.905, Time 1.185
+Frame 156/223, Score -31.933, Time 1.169
+Frame 157/223, Score -31.688, Time 1.177
+Frame 158/223, Score -30.986, Time 1.155
+Frame 159/223, Score -30.497, Time 1.182
+Frame 160/223, Score -29.365, Time 1.185
+Frame 161/223, Score -30.010, Time 1.343
+Frame 162/223, Score -30.604, Time 1.215
+Frame 163/223, Score -28.376, Time 1.199
+Frame 164/223, Score -28.880, Time 1.145
+Frame 165/223, Score -30.891, Time 1.435
+Frame 166/223, Score -28.023, Time 1.178
+Frame 167/223, Score -35.688, Time 1.158
+Frame 168/223, Score -33.228, Time 1.164
+Frame 169/223, Score -30.704, Time 1.486
+Frame 170/223, Score -30.430, Time 1.203
+Frame 171/223, Score -27.316, Time 1.198
+Frame 172/223, Score -28.951, Time 1.165
+Frame 173/223, Score -30.022, Time 1.445
+Frame 174/223, Score -30.420, Time 1.194
+Frame 175/223, Score -24.774, Time 1.194
+Frame 176/223, Score -28.267, Time 1.179
+Frame 177/223, Score -24.660, Time 1.459
+Frame 178/223, Score -27.244, Time 1.185
+Frame 179/223, Score -29.951, Time 1.214
+Frame 180/223, Score -26.603, Time 1.177
+Frame 181/223, Score -27.735, Time 1.452
+Frame 182/223, Score -29.528, Time 1.184
+Frame 183/223, Score -25.908, Time 1.176
+Frame 184/223, Score -27.052, Time 1.225
+Frame 185/223, Score -29.839, Time 1.369
+Frame 186/223, Score -29.991, Time 1.392
+Frame 187/223, Score -30.525, Time 1.178
+Frame 188/223, Score -24.424, Time 1.195
+Frame 189/223, Score -21.613, Time 1.179
+Frame 190/223, Score -29.272, Time 1.221
+Frame 191/223, Score -27.016, Time 1.185
+Frame 192/223, Score -25.276, Time 1.177
+Frame 193/223, Score -24.843, Time 1.198
+Frame 194/223, Score -15.903, Time 1.215
+Frame 195/223, Score -22.662, Time 1.194
+Frame 196/223, Score -23.064, Time 1.172
+Frame 197/223, Score -27.977, Time 1.181
+Frame 198/223, Score -23.738, Time 1.186
+Frame 199/223, Score -21.165, Time 1.235
+Frame 200/223, Score -21.710, Time 1.177
+Frame 201/223, Score -26.692, Time 1.156
+Frame 202/223, Score -23.390, Time 1.195
+Frame 203/223, Score -28.159, Time 1.445
+Frame 204/223, Score -27.420, Time 1.165
+Frame 205/223, Score -25.175, Time 1.177
+Frame 206/223, Score -25.270, Time 1.158
+Frame 207/223, Score -23.622, Time 1.409
+Frame 208/223, Score -25.222, Time 1.210
+Frame 209/223, Score -23.687, Time 1.169
+Frame 210/223, Score -26.520, Time 1.181
+Frame 211/223, Score -19.152, Time 1.193
+Frame 212/223, Score -21.705, Time 1.193
+Frame 213/223, Score -24.619, Time 1.180
+Frame 214/223, Score -23.887, Time 1.190
+Frame 215/223, Score -20.681, Time 1.212
+Frame 216/223, Score -17.533, Time 1.172
+Frame 217/223, Score -18.490, Time 1.164
+Frame 218/223, Score -24.129, Time 1.163
+Frame 219/223, Score -23.530, Time 1.183
+Frame 220/223, Score -23.461, Time 1.199
+Frame 221/223, Score -21.879, Time 1.171
+Frame 222/223, Score -23.832, Time 1.163
+results/20210121_SharkNearTwoSurfers_1_0.json
+Dealing with mdnet_input/20210121_SharkNearTwoSurfers/20210121_SharkNearTwoSurfers_1_1.json
+Frame 1/175, Score 6.463, Time 1.012
+Frame 2/175, Score 4.224, Time 0.734
+Frame 3/175, Score 6.429, Time 0.730
+Frame 4/175, Score 6.103, Time 0.776
+Frame 5/175, Score 5.728, Time 0.741
+Frame 6/175, Score 5.952, Time 0.739
+Frame 7/175, Score 5.694, Time 0.725
+Frame 8/175, Score 5.302, Time 0.731
+Frame 9/175, Score 6.268, Time 0.738
+Frame 10/175, Score 5.025, Time 1.463
+Frame 11/175, Score 10.465, Time 0.740
+Frame 12/175, Score 9.364, Time 0.728
+Frame 13/175, Score 9.159, Time 0.736
+Frame 14/175, Score 9.583, Time 0.736
+Frame 15/175, Score 9.885, Time 0.720
+Frame 16/175, Score 9.797, Time 0.736
+Frame 17/175, Score 9.792, Time 0.713
+Frame 18/175, Score 10.773, Time 0.722
+Frame 19/175, Score 8.665, Time 0.715
+Frame 20/175, Score 9.807, Time 1.467
+Frame 21/175, Score 9.334, Time 0.745
+Frame 22/175, Score 8.005, Time 0.729
+Frame 23/175, Score 8.465, Time 0.727
+Frame 24/175, Score 8.522, Time 0.722
+Frame 25/175, Score 7.335, Time 0.731
+Frame 26/175, Score 7.754, Time 0.892
+Frame 27/175, Score 7.775, Time 0.736
+Frame 28/175, Score 9.427, Time 0.721
+Frame 29/175, Score 10.152, Time 0.719
+Frame 30/175, Score 10.010, Time 1.485
+Frame 31/175, Score 9.301, Time 0.723
+Frame 32/175, Score 8.933, Time 0.981
+Frame 33/175, Score 8.937, Time 0.719
+Frame 34/175, Score 10.349, Time 0.715
+Frame 35/175, Score 10.559, Time 0.726
+Frame 36/175, Score 9.150, Time 0.725
+Frame 37/175, Score 8.400, Time 0.721
+Frame 38/175, Score 7.886, Time 1.803
+Frame 39/175, Score 8.689, Time 0.729
+Frame 40/175, Score 8.964, Time 1.522
+Frame 41/175, Score 10.062, Time 0.734
+Frame 42/175, Score 10.094, Time 0.721
+Frame 43/175, Score 9.678, Time 0.730
+Frame 44/175, Score 10.327, Time 0.721
+Frame 45/175, Score 8.497, Time 0.726
+Frame 46/175, Score 9.100, Time 0.732
+Frame 47/175, Score 8.190, Time 0.728
+Frame 48/175, Score 8.221, Time 0.732
+Frame 49/175, Score 7.414, Time 0.740
+Frame 50/175, Score 8.950, Time 1.486
+Frame 51/175, Score 7.731, Time 0.725
+Frame 52/175, Score 7.564, Time 0.723
+Frame 53/175, Score 7.579, Time 0.725
+Frame 54/175, Score 7.871, Time 0.718
+Frame 55/175, Score 6.460, Time 0.718
+Frame 56/175, Score 7.786, Time 0.736
+Frame 57/175, Score 8.246, Time 0.719
+Frame 58/175, Score 9.499, Time 0.729
+Frame 59/175, Score 9.175, Time 0.730
+Frame 60/175, Score 9.875, Time 1.500
+Frame 61/175, Score 10.189, Time 0.738
+Frame 62/175, Score 9.847, Time 0.737
+Frame 63/175, Score 9.875, Time 1.010
+Frame 64/175, Score 10.126, Time 0.737
+Frame 65/175, Score 9.424, Time 0.729
+Frame 66/175, Score 9.251, Time 0.743
+Frame 67/175, Score 8.735, Time 0.719
+Frame 68/175, Score 9.088, Time 0.720
+Frame 69/175, Score 9.714, Time 0.708
+Frame 70/175, Score 10.480, Time 1.573
+Frame 71/175, Score 10.414, Time 0.739
+Frame 72/175, Score 12.221, Time 0.735
+Frame 73/175, Score 11.448, Time 0.732
+Frame 74/175, Score 11.439, Time 0.737
+Frame 75/175, Score 8.565, Time 0.727
+Frame 76/175, Score 5.299, Time 0.735
+Frame 77/175, Score 0.381, Time 0.714
+Frame 78/175, Score -6.708, Time 1.136
+Frame 79/175, Score -5.565, Time 1.383
+Frame 80/175, Score -11.715, Time 1.152
+Frame 81/175, Score -5.946, Time 1.153
+Frame 82/175, Score 8.384, Time 0.723
+Frame 83/175, Score 13.086, Time 0.712
+Frame 84/175, Score 13.303, Time 0.894
+Frame 85/175, Score 12.223, Time 0.735
+Frame 86/175, Score 11.985, Time 0.890
+Frame 87/175, Score 12.512, Time 0.735
+Frame 88/175, Score 12.325, Time 0.828
+Frame 89/175, Score 13.062, Time 0.754
+Frame 90/175, Score 12.698, Time 2.180
+Frame 91/175, Score 11.787, Time 0.723
+Frame 92/175, Score 11.361, Time 0.714
+Frame 93/175, Score 11.275, Time 0.712
+Frame 94/175, Score 11.806, Time 0.720
+Frame 95/175, Score 10.703, Time 0.724
+Frame 96/175, Score 11.494, Time 0.726
+Frame 97/175, Score 11.855, Time 0.739
+Frame 98/175, Score 10.303, Time 0.890
+Frame 99/175, Score 8.105, Time 0.850
+Frame 100/175, Score 8.655, Time 1.686
+Frame 101/175, Score -5.195, Time 1.457
+Frame 102/175, Score -11.918, Time 1.468
+Frame 103/175, Score -9.493, Time 1.420
+Frame 104/175, Score 5.260, Time 0.893
+Frame 105/175, Score 12.899, Time 0.897
+Frame 106/175, Score 13.202, Time 0.898
+Frame 107/175, Score 13.341, Time 0.898
+Frame 108/175, Score 13.259, Time 0.900
+Frame 109/175, Score 13.064, Time 0.739
+Frame 110/175, Score 13.340, Time 1.698
+Frame 111/175, Score 12.494, Time 0.735
+Frame 112/175, Score 13.219, Time 0.734
+Frame 113/175, Score 11.976, Time 0.731
+Frame 114/175, Score 13.258, Time 0.734
+Frame 115/175, Score 12.591, Time 0.746
+Frame 116/175, Score 13.187, Time 0.740
+Frame 117/175, Score 12.351, Time 0.818
+Frame 118/175, Score 12.272, Time 0.762
+Frame 119/175, Score 12.592, Time 0.763
+Frame 120/175, Score 11.443, Time 1.493
+Frame 121/175, Score 10.720, Time 0.909
+Frame 122/175, Score 10.199, Time 0.725
+Frame 123/175, Score 9.616, Time 0.721
+Frame 124/175, Score 10.465, Time 0.731
+Frame 125/175, Score 10.723, Time 0.721
+Frame 126/175, Score 10.608, Time 0.729
+Frame 127/175, Score 10.695, Time 0.724
+Frame 128/175, Score 10.294, Time 0.728
+Frame 129/175, Score 10.343, Time 0.722
+Frame 130/175, Score 10.220, Time 1.530
+Frame 131/175, Score 9.465, Time 0.715
+Frame 132/175, Score 9.586, Time 0.715
+Frame 133/175, Score 9.304, Time 0.717
+Frame 134/175, Score 8.967, Time 0.733
+Frame 135/175, Score 9.569, Time 0.720
+Frame 136/175, Score 8.598, Time 0.726
+Frame 137/175, Score 8.278, Time 0.719
+Frame 138/175, Score 8.554, Time 0.722
+Frame 139/175, Score 8.817, Time 0.721
+Frame 140/175, Score 8.893, Time 1.509
+Frame 141/175, Score 8.090, Time 0.722
+Frame 142/175, Score 7.795, Time 0.714
+Frame 143/175, Score 9.141, Time 0.743
+Frame 144/175, Score 8.365, Time 0.717
+Frame 145/175, Score 9.719, Time 0.715
+Frame 146/175, Score 9.542, Time 0.723
+Frame 147/175, Score 9.197, Time 0.717
+Frame 148/175, Score 10.252, Time 0.731
+Frame 149/175, Score 10.381, Time 0.719
+Frame 150/175, Score 10.391, Time 1.514
+Frame 151/175, Score 10.360, Time 0.720
+Frame 152/175, Score 10.692, Time 0.904
+Frame 153/175, Score 11.448, Time 0.713
+Frame 154/175, Score 11.108, Time 0.714
+Frame 155/175, Score 9.925, Time 0.746
+Frame 156/175, Score 11.436, Time 0.717
+Frame 157/175, Score 10.408, Time 0.718
+Frame 158/175, Score 10.817, Time 0.717
+Frame 159/175, Score 11.417, Time 0.723
+Frame 160/175, Score 11.890, Time 1.510
+Frame 161/175, Score 11.578, Time 0.713
+Frame 162/175, Score 11.801, Time 0.717
+Frame 163/175, Score 11.262, Time 0.709
+Frame 164/175, Score 11.419, Time 0.716
+Frame 165/175, Score 11.061, Time 0.715
+Frame 166/175, Score 11.694, Time 0.710
+Frame 167/175, Score 10.279, Time 0.713
+Frame 168/175, Score 10.327, Time 0.730
+Frame 169/175, Score 11.308, Time 0.715
+Frame 170/175, Score 10.603, Time 1.510
+Frame 171/175, Score 11.224, Time 0.727
+Frame 172/175, Score 11.968, Time 0.715
+Frame 173/175, Score 10.547, Time 0.711
+Frame 174/175, Score 9.514, Time 0.714
+results/20210121_SharkNearTwoSurfers_1_1.json
+Dealing with mdnet_input/20210121_SharkNearTwoSurfers/20210121_SharkNearTwoSurfers_human_0.json
+Frame 1/73, Score 2.714, Time 0.735
+Frame 2/73, Score 2.872, Time 0.735
+Frame 3/73, Score 2.557, Time 0.764
+Frame 4/73, Score 2.730, Time 0.843
+Frame 5/73, Score 2.447, Time 0.734
+Frame 6/73, Score 2.012, Time 0.712
+Frame 7/73, Score 1.945, Time 0.706
+Frame 8/73, Score 2.178, Time 0.704
+Frame 9/73, Score 1.378, Time 0.715
+Frame 10/73, Score 1.685, Time 1.445
+Frame 11/73, Score 5.217, Time 0.717
+Frame 12/73, Score 5.176, Time 0.713
+Frame 13/73, Score 5.603, Time 0.709
+Frame 14/73, Score 5.511, Time 0.704
+Frame 15/73, Score 5.584, Time 0.711
+Frame 16/73, Score 5.149, Time 0.733
+Frame 17/73, Score 4.702, Time 0.716
+Frame 18/73, Score 5.274, Time 0.711
+Frame 19/73, Score 4.932, Time 0.710
+Frame 20/73, Score 4.766, Time 1.456
+Frame 21/73, Score 5.497, Time 0.717
+Frame 22/73, Score 5.316, Time 0.710
+Frame 23/73, Score 5.405, Time 0.710
+Frame 24/73, Score 5.169, Time 0.717
+Frame 25/73, Score 5.861, Time 0.718
+Frame 26/73, Score 5.501, Time 0.723
+Frame 27/73, Score 4.649, Time 0.711
+Frame 28/73, Score 5.456, Time 0.711
+Frame 29/73, Score 5.400, Time 0.746
+Frame 30/73, Score 5.350, Time 1.510
+Frame 31/73, Score 6.953, Time 0.890
+Frame 32/73, Score 6.759, Time 0.890
+Frame 33/73, Score 7.187, Time 0.892
+Frame 34/73, Score 6.960, Time 0.882
+Frame 35/73, Score 6.368, Time 0.871
+Frame 36/73, Score 6.243, Time 0.866
+Frame 37/73, Score 6.197, Time 0.868
+Frame 38/73, Score 6.551, Time 0.866
+Frame 39/73, Score 6.269, Time 0.870
+Frame 40/73, Score 6.669, Time 1.846
+Frame 41/73, Score 6.734, Time 0.887
+Frame 42/73, Score 6.773, Time 0.896
+Frame 43/73, Score 6.720, Time 0.884
+Frame 44/73, Score 6.713, Time 0.883
+Frame 45/73, Score 6.854, Time 0.884
+Frame 46/73, Score 7.449, Time 0.878
+Frame 47/73, Score 6.570, Time 0.882
+Frame 48/73, Score 7.009, Time 0.884
+Frame 49/73, Score 6.739, Time 0.880
+Frame 50/73, Score 7.716, Time 1.899
+Frame 51/73, Score 7.510, Time 0.788
+Frame 52/73, Score 7.709, Time 0.711
+Frame 53/73, Score 7.906, Time 0.709
+Frame 54/73, Score 7.313, Time 0.709
+Frame 55/73, Score 7.373, Time 0.707
+Frame 56/73, Score 7.153, Time 0.707
+Frame 57/73, Score 7.105, Time 0.706
+Frame 58/73, Score 7.337, Time 0.700
+Frame 59/73, Score 7.780, Time 0.701
+Frame 60/73, Score 7.336, Time 1.482
+Frame 61/73, Score 7.881, Time 0.851
+Frame 62/73, Score 8.165, Time 0.713
+Frame 63/73, Score 7.981, Time 0.715
+Frame 64/73, Score 7.892, Time 0.713
+Frame 65/73, Score 7.810, Time 0.714
+Frame 66/73, Score 7.463, Time 0.718
+Frame 67/73, Score 7.125, Time 0.712
+Frame 68/73, Score 8.094, Time 0.710
+Frame 69/73, Score 7.913, Time 0.715
+Frame 70/73, Score 7.594, Time 1.510
+Frame 71/73, Score 7.717, Time 0.709
+Frame 72/73, Score 8.155, Time 0.705
+results/20210121_SharkNearTwoSurfers_human_0.json
+Dealing with mdnet_input/20210121_SharkNearTwoSurfers/20210121_SharkNearTwoSurfers_shark_0.json
+Frame 1/223, Score 4.285, Time 0.756
+Frame 2/223, Score 3.620, Time 0.732
+Frame 3/223, Score 3.187, Time 0.746
+Frame 4/223, Score 3.222, Time 0.742
+Frame 5/223, Score 3.275, Time 0.741
+Frame 6/223, Score 3.560, Time 0.743
+Frame 7/223, Score 3.748, Time 0.740
+Frame 8/223, Score 2.928, Time 0.734
+Frame 9/223, Score 2.939, Time 0.742
+Frame 10/223, Score 2.649, Time 1.521
+Frame 11/223, Score 9.171, Time 0.751
+Frame 12/223, Score 7.957, Time 0.743
+Frame 13/223, Score 8.437, Time 0.727
+Frame 14/223, Score 8.045, Time 0.726
+Frame 15/223, Score 8.266, Time 0.725
+Frame 16/223, Score 8.558, Time 0.728
+Frame 17/223, Score 7.794, Time 0.732
+Frame 18/223, Score 8.486, Time 0.731
+Frame 19/223, Score 8.747, Time 0.738
+Frame 20/223, Score 7.741, Time 1.468
+Frame 21/223, Score 10.290, Time 0.740
+Frame 22/223, Score 11.050, Time 0.712
+Frame 23/223, Score 9.697, Time 0.720
+Frame 24/223, Score 9.484, Time 0.726
+Frame 25/223, Score 9.028, Time 0.727
+Frame 26/223, Score 9.399, Time 0.717
+Frame 27/223, Score 10.990, Time 0.726
+Frame 28/223, Score 11.523, Time 0.742
+Frame 29/223, Score 11.071, Time 0.748
+Frame 30/223, Score 11.457, Time 1.522
+Frame 31/223, Score 12.245, Time 0.718
+Frame 32/223, Score 11.524, Time 0.715
+Frame 33/223, Score 11.819, Time 0.716
+Frame 34/223, Score 11.624, Time 0.705
+Frame 35/223, Score 11.254, Time 0.701
+Frame 36/223, Score 11.383, Time 0.697
+Frame 37/223, Score 11.908, Time 0.731
+Frame 38/223, Score 11.283, Time 0.737
+Frame 39/223, Score 11.246, Time 0.730
+Frame 40/223, Score 10.699, Time 1.493
+Frame 41/223, Score 11.773, Time 0.751
+Frame 42/223, Score 11.773, Time 0.743
+Frame 43/223, Score 10.845, Time 0.739
+Frame 44/223, Score 11.172, Time 0.740
+Frame 45/223, Score 11.275, Time 0.738
+Frame 46/223, Score 11.963, Time 0.734
+Frame 47/223, Score 11.841, Time 0.850
+Frame 48/223, Score 11.677, Time 0.740
+Frame 49/223, Score 12.329, Time 0.738
+Frame 50/223, Score 11.320, Time 1.533
+Frame 51/223, Score 11.897, Time 0.750
+Frame 52/223, Score 11.373, Time 0.739
+Frame 53/223, Score 12.221, Time 0.740
+Frame 54/223, Score 10.831, Time 0.738
+Frame 55/223, Score 11.908, Time 0.737
+Frame 56/223, Score 12.010, Time 0.716
+Frame 57/223, Score 12.303, Time 0.713
+Frame 58/223, Score 11.568, Time 0.717
+Frame 59/223, Score 10.827, Time 0.734
+Frame 60/223, Score 10.819, Time 1.549
+Frame 61/223, Score 11.105, Time 0.751
+Frame 62/223, Score 10.437, Time 0.738
+Frame 63/223, Score 10.156, Time 0.747
+Frame 64/223, Score 11.296, Time 0.742
+Frame 65/223, Score 11.336, Time 0.898
+Frame 66/223, Score 10.953, Time 0.722
+Frame 67/223, Score 10.726, Time 0.720
+Frame 68/223, Score 10.942, Time 0.735
+Frame 69/223, Score 9.848, Time 0.718
+Frame 70/223, Score 10.802, Time 1.553
+Frame 71/223, Score 11.069, Time 0.744
+Frame 72/223, Score 10.848, Time 0.735
+Frame 73/223, Score 10.283, Time 0.739
+Frame 74/223, Score 9.379, Time 0.733
+Frame 75/223, Score 10.807, Time 0.737
+Frame 76/223, Score 11.366, Time 0.734
+Frame 77/223, Score 12.258, Time 0.736
+Frame 78/223, Score 13.070, Time 0.735
+Frame 79/223, Score 11.908, Time 0.747
+Frame 80/223, Score 13.254, Time 1.536
+Frame 81/223, Score 12.576, Time 0.756
+Frame 82/223, Score 11.585, Time 0.741
+Frame 83/223, Score 12.344, Time 0.913
+Frame 84/223, Score 11.767, Time 0.725
+Frame 85/223, Score 11.616, Time 0.729
+Frame 86/223, Score 11.558, Time 0.723
+Frame 87/223, Score 11.903, Time 0.728
+Frame 88/223, Score 11.107, Time 0.716
+Frame 89/223, Score 11.168, Time 0.723
+Frame 90/223, Score 12.420, Time 1.521
+Frame 91/223, Score 10.702, Time 0.703
+Frame 92/223, Score 11.048, Time 0.702
+Frame 93/223, Score 11.383, Time 0.698
+Frame 94/223, Score 10.739, Time 0.708
+Frame 95/223, Score 10.627, Time 0.709
+Frame 96/223, Score 10.679, Time 0.700
+Frame 97/223, Score 11.161, Time 0.708
+Frame 98/223, Score 10.976, Time 0.706
+Frame 99/223, Score 10.799, Time 0.702
+Frame 100/223, Score 10.816, Time 1.504
+Frame 101/223, Score 12.184, Time 0.716
+Frame 102/223, Score 10.999, Time 0.722
+Frame 103/223, Score 11.380, Time 0.721
+Frame 104/223, Score 11.985, Time 0.722
+Frame 105/223, Score 11.565, Time 0.719
+Frame 106/223, Score 12.757, Time 0.720
+Frame 107/223, Score 11.524, Time 0.733
+Frame 108/223, Score 10.994, Time 0.730
+Frame 109/223, Score 11.260, Time 0.720
+Frame 110/223, Score 11.386, Time 1.534
+Frame 111/223, Score 11.942, Time 0.713
+Frame 112/223, Score 11.316, Time 0.719
+Frame 113/223, Score 10.958, Time 0.707
+Frame 114/223, Score 11.818, Time 0.710
+Frame 115/223, Score 11.595, Time 0.715
+Frame 116/223, Score 10.644, Time 0.707
+Frame 117/223, Score 10.560, Time 0.710
+Frame 118/223, Score 10.113, Time 0.711
+Frame 119/223, Score 9.779, Time 0.704
+Frame 120/223, Score 11.577, Time 1.507
+Frame 121/223, Score 10.809, Time 0.751
+Frame 122/223, Score 10.030, Time 0.725
+Frame 123/223, Score 9.132, Time 0.716
+Frame 124/223, Score 7.305, Time 0.717
+Frame 125/223, Score 6.244, Time 0.875
+Frame 126/223, Score 3.024, Time 0.701
+Frame 127/223, Score -0.639, Time 1.130
+Frame 128/223, Score 4.499, Time 0.701
+Frame 129/223, Score 9.225, Time 0.726
+Frame 130/223, Score 10.139, Time 1.504
+Frame 131/223, Score 9.620, Time 0.720
+Frame 132/223, Score 9.575, Time 0.724
+Frame 133/223, Score 8.620, Time 0.724
+Frame 134/223, Score 10.762, Time 0.724
+Frame 135/223, Score 10.719, Time 0.720
+Frame 136/223, Score 9.500, Time 0.717
+Frame 137/223, Score 10.405, Time 0.883
+Frame 138/223, Score 9.550, Time 0.722
+Frame 139/223, Score 9.689, Time 0.713
+Frame 140/223, Score 10.103, Time 1.514
+Frame 141/223, Score 10.543, Time 0.718
+Frame 142/223, Score 11.186, Time 0.711
+Frame 143/223, Score 11.626, Time 0.716
+Frame 144/223, Score 11.748, Time 0.722
+Frame 145/223, Score 11.101, Time 0.724
+Frame 146/223, Score 10.924, Time 0.740
+Frame 147/223, Score 9.747, Time 0.716
+Frame 148/223, Score 8.994, Time 0.721
+Frame 149/223, Score 9.114, Time 0.717
+Frame 150/223, Score 6.228, Time 1.528
+Frame 151/223, Score 8.583, Time 0.721
+Frame 152/223, Score 9.418, Time 0.717
+Frame 153/223, Score 10.800, Time 0.722
+Frame 154/223, Score 11.084, Time 0.719
+Frame 155/223, Score 11.226, Time 0.709
+Frame 156/223, Score 11.421, Time 0.708
+Frame 157/223, Score 10.725, Time 0.714
+Frame 158/223, Score 11.723, Time 0.737
+Frame 159/223, Score 11.849, Time 0.747
+Frame 160/223, Score 9.648, Time 1.500
+Frame 161/223, Score 10.915, Time 0.720
+Frame 162/223, Score 11.472, Time 0.716
+Frame 163/223, Score 10.744, Time 0.723
+Frame 164/223, Score 10.956, Time 0.712
+Frame 165/223, Score 10.103, Time 0.722
+Frame 166/223, Score 10.983, Time 0.714
+Frame 167/223, Score 10.440, Time 0.725
+Frame 168/223, Score 11.210, Time 0.722
+Frame 169/223, Score 11.030, Time 0.720
+Frame 170/223, Score 9.820, Time 1.510
+Frame 171/223, Score 12.080, Time 0.947
+Frame 172/223, Score 11.976, Time 0.708
+Frame 173/223, Score 14.112, Time 0.708
+Frame 174/223, Score 13.268, Time 0.709
+Frame 175/223, Score 13.481, Time 0.709
+Frame 176/223, Score 12.500, Time 0.705
+Frame 177/223, Score 11.114, Time 0.710
+Frame 178/223, Score 12.263, Time 0.837
+Frame 179/223, Score 10.866, Time 0.706
+Frame 180/223, Score 11.901, Time 1.499
+Frame 181/223, Score 10.670, Time 0.713
+Frame 182/223, Score 11.038, Time 0.713
+Frame 183/223, Score 11.719, Time 0.724
+Frame 184/223, Score 12.804, Time 0.724
+Frame 185/223, Score 11.788, Time 0.725
+Frame 186/223, Score 10.437, Time 0.707
+Frame 187/223, Score 10.978, Time 0.714
+Frame 188/223, Score 10.258, Time 0.709
+Frame 189/223, Score 11.110, Time 0.708
+Frame 190/223, Score 11.324, Time 1.511
+Frame 191/223, Score 9.510, Time 0.714
+Frame 192/223, Score 9.403, Time 0.704
+Frame 193/223, Score 9.582, Time 0.714
+Frame 194/223, Score 8.950, Time 0.708
+Frame 195/223, Score 9.259, Time 0.709
+Frame 196/223, Score 9.084, Time 0.737
+Frame 197/223, Score 9.492, Time 0.709
+Frame 198/223, Score 9.913, Time 0.703
+Frame 199/223, Score 10.826, Time 0.706
+Frame 200/223, Score 10.381, Time 1.512
+Frame 201/223, Score 6.892, Time 0.719
+Frame 202/223, Score 8.155, Time 0.709
+Frame 203/223, Score 8.235, Time 0.714
+Frame 204/223, Score 7.473, Time 0.721
+Frame 205/223, Score 7.691, Time 0.721
+Frame 206/223, Score 7.932, Time 0.720
+Frame 207/223, Score 7.798, Time 0.718
+Frame 208/223, Score 7.474, Time 0.723
+Frame 209/223, Score 6.845, Time 0.726
+Frame 210/223, Score 6.575, Time 1.517
+Frame 211/223, Score 8.287, Time 0.734
+Frame 212/223, Score 8.597, Time 0.733
+Frame 213/223, Score 8.589, Time 0.730
+Frame 214/223, Score 8.641, Time 0.938
+Frame 215/223, Score 8.424, Time 0.735
+Frame 216/223, Score 7.562, Time 0.735
+Frame 217/223, Score 7.824, Time 0.742
+Frame 218/223, Score 8.027, Time 0.737
+Frame 219/223, Score 8.353, Time 0.737
+Frame 220/223, Score 8.184, Time 1.541
+Frame 221/223, Score 8.991, Time 0.706
+Frame 222/223, Score 8.882, Time 0.707
+results/20210121_SharkNearTwoSurfers_shark_0.json
