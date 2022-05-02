@@ -16,6 +16,7 @@ def get_vid_meta(filename):
 
 
 def process_single(annot_fn, fps, fout, img_folder):
+    fps = int(fps)
     with open(annot_fn) as f:
         contents = json.load(f)
 
@@ -49,10 +50,15 @@ def process_single(annot_fn, fps, fout, img_folder):
                 dropped_items.append(name2i_attr)
             dropped_items.append(obj)
             continue
-        if av.get(object_label, None):
-            cat = av[object_label].strip()
-        else:
+        if av.get(object_present, None):
             cat = av[object_present].strip()
+        else:
+            cat = av[object_label]
+            try:
+                cat = attr[object_label]['options'][cat]
+            except:
+                print(attr[object_label])
+                print(av, object_label, av[object_label])
 
         c_id = av.get(object_id, '0').strip()
         # adding to categories.....if needed
@@ -84,22 +90,23 @@ def process_single(annot_fn, fps, fout, img_folder):
 
 
 def main(args):
-
-    prefixes = [f for f in os.listdir(frames) if os.path.isdir(f'{args.frames}/{f}')]
+    prefixes = [f for f in os.listdir(args.frames) if os.path.isdir(f'{args.frames}/{f}')]
     dropped_things = {}
-    annot_folder = 'coco_files'
     new_prefixes = []
     for p in prefixes:
         new_p = f'{args.folder}/{p}'
         if os.path.isfile(new_p + '.json') and os.path.isfile(new_p + '.mp4'):
             print('Processing', new_p)
             fps, _, _ = get_vid_meta(new_p + '.mp4')
-            fout = f'{annot_folder}/{p}_coco.json'
-            dropped_items = process_single(new_p+'.json', fps, fout, f'{frames}/{p}')
+            fout = f'{args.output_folder}/{p}_coco.json'
+            dropped_items = process_single(new_p+'.json', fps, fout, f'{args.frames}/{p}')
             if len(dropped_items) > 0:
                 dropped_things[p] = dropped_items
+                print('\t', p, 'dropped', len(dropped_items))
             else:
                 new_prefixes.append(p)
+        print()
+    return dropped_things, new_prefixes
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
