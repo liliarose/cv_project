@@ -18,7 +18,7 @@ def mdnet2list(video_fin, video_results, frames, offset=-1):
     # getting all the name of the images
     output = [{'img': frame, 'bbox': []} for frame in sorted(os.listdir(frames)) if frame.endswith('.jpg')]
     frame_num = int(output[-1]['img'].split('.jpg')[0].split('-')[-1])
-    assert(frame_num == len(output)) # to confirm that all frames r generated
+    assert(frame_num == len(output)) # to confirm that all frames are generated
 
 
     for result in video_results:
@@ -77,7 +77,7 @@ def generate_results_boxes(frames_fldr, bboxes_l, output_folder='test', draw_tex
     '''
     frames_fldr: folder containing all the frames for a video
     bboxes_l: the bounding boxes output from mdnet2list function
-    output_folder:  folder to output the images
+    output_folder: folder to output the images
     draw_text: whether to draw the file names (for combining multiple videos together)
     show_img: whether or not to show every n-th image (n= show_img)
     '''
@@ -104,7 +104,7 @@ def generate_results_boxes(frames_fldr, bboxes_l, output_folder='test', draw_tex
         if len(bboxes) > 0 and not cv2.imwrite(out_fn, image):
             print(out_fn)
 
-        # shows image if neededed
+        # shows image if needed
         if show_img and i%show_img ==0:
             print(fn)
             plt.imshow(image)
